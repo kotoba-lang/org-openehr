@@ -1,0 +1,31 @@
+#!/usr/bin/env nbb
+;; Run the suite on the ClojureScript side.
+;;
+;; Not a formality. This library's whole surface is character-level string
+;; scanning (adl.lexer's char classification, adl.dadl's escape handling,
+;; adl.cadl's numeric bounds) plus a fair amount of `Long`/`Double` vs
+;; `js/parseInt`/`js/parseFloat` arithmetic in adl.lexer/read-number and
+;; adl.cadl's interval parsing -- exactly the surface area where this
+;; workspace has repeatedly hit JVM/cljs divergence (`(int c)` returning 0
+;; under cljs is the canonical example; this codebase deliberately avoids
+;; that pattern in favor of `re-matches` against 1-char strings, but that
+;; choice is only trustworthy if it is actually exercised on both runtimes,
+;; not just asserted in a docstring).
+;;
+;;   nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljs
+(ns verify-cljs
+  (:require [clojure.test :as t]
+            [adl.lexer-test]
+            [adl.dadl-test]
+            [adl.cadl-test]
+            [adl.path-test]
+            [adl.archetype-test]))
+
+(defmethod t/report [:cljs.test/default :end-run-tests] [m]
+  (println)
+  (if (t/successful? m)
+    (println "all checks passed on the ClojureScript path")
+    (do (println "FAILED on the ClojureScript path")
+        (js/process.exit 1))))
+
+(t/run-tests 'adl.lexer-test 'adl.dadl-test 'adl.cadl-test 'adl.path-test 'adl.archetype-test)
