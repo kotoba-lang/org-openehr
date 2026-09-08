@@ -23,7 +23,7 @@
   the one place cADL and dADL are textually identical, so their body is
   parsed by literally calling back into `adl.dadl` rather than re-deriving
   the same grammar."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [adl.lexer :as lex]
             [adl.dadl :as dadl]
             [adl.path :as path]))

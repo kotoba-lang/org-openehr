@@ -30,7 +30,7 @@
   to catch. A regex against a 1-character string is slower per-char but
   behaves identically on both runtimes, and these documents are a few
   hundred lines, not a hot loop."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn adl-error
   "Builds the ex-info this namespace's parsers throw on malformed input.
