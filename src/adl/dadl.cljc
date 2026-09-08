@@ -25,7 +25,7 @@
   significant, so unwrapping it loses no round-trip information (serializing
   a bare value and serializing a 1-item list of it produce the same text)
   while sparing every caller a `(if (= 1 (count items)) (first items) ...)`."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [adl.lexer :as lex]))
 
 ;; ---------------------------------------------------------------------

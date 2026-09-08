@@ -19,8 +19,8 @@
   The bracket scanner is quote-aware (a `'...'` inside a predicate can, in
   principle, contain a `/` or `]`) rather than a naive index-of search for
   the next `]` -- the naive version is the classic wrong way to do this and
-  is exactly the failure mode a `clojure.string/split` sketch would have."
-  (:require [clojure.string :as str]
+  is exactly the failure mode a `str/split` sketch would have."
+  (:require [kotoba.lang.text :as str]
             [adl.lexer :as lex]))
 
 ;; ---------------------------------------------------------------------

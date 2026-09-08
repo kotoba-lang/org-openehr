@@ -14,7 +14,7 @@
   block -- real OCL expression grammar is out of scope for this repo (an
   RM-path-and-constraint parser, not a full object-constraint-language
   one) -- captured and round-tripped verbatim rather than dropped."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [adl.lexer :as lex]
             [adl.dadl :as dadl]
             [adl.cadl :as cadl]))
