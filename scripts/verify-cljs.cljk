@@ -12,7 +12,7 @@
 ;; choice is only trustworthy if it is actually exercised on both runtimes,
 ;; not just asserted in a docstring).
 ;;
-;;   nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljs
+;;   nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljk
 (ns verify-cljs
   (:require [clojure.test :as t]
             [adl.lexer-test]
