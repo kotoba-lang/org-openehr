@@ -132,7 +132,7 @@ repo does not duplicate `org-hl7-v2`'s wire-format work.
 ## Test vectors
 
 Two real archetypes published by the openEHR organization on GitHub are
-embedded verbatim in `test/adl/fixtures.cljc` (cited by source URL there)
+embedded verbatim in `test/adl/fixtures.cljk` (cited by source URL there)
 and driven through full parse → serialize → re-parse round-trip tests:
 
 - `openEHR-EHR-OBSERVATION.demo.v1` — openEHR/adl-archetypes (every
@@ -161,7 +161,7 @@ its definition.
 
 ```sh
 clojure -M:test                                              # JVM
-nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljs   # ClojureScript
+nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljk   # ClojureScript
 ```
 
 Both runtimes run the identical suite (40 tests / 250 assertions) against
