@@ -1,5 +1,5 @@
 (ns adl.lexer-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [adl.lexer :as lex]))
 
 (deftest skip-ws-and-comments-test
