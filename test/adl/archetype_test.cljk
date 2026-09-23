@@ -4,7 +4,7 @@
   -- not constructed toy documents. Where a case below IS constructed (the
   negative/error tests, which need a specific narrow malformation), it is
   marked so explicitly."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [adl.archetype :as arch]
             [adl.fixtures :as fx]))
 

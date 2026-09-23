@@ -1,5 +1,5 @@
 (ns adl.cadl-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [adl.cadl :as cadl]))
 
 (defn- rt [text]
